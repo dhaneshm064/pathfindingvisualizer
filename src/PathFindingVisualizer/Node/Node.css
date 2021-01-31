@@ -15,7 +15,7 @@
 
 .Node-visited {
   animation-name: visitedAnimation;
-  animation-duration: 1.2s;
+  animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-delay: 0;
   animation-direction: alternate;
@@ -26,18 +26,19 @@
 @keyframes visitedAnimation {
   0% {
     transform: scale(0.3);
-    background-color: lightsteelblue;
+    background-color: rgb(19, 25, 32);
     border-radius: 100%;
   }
 
   50% {
-    background-color: steelblue;
+    background-color: rgb(43, 32, 138);
   }
 
   75% {
     transform: scale(1.2);
-    background-color: deepskyblue;
+    background-color: rgb(31, 11, 145);
   }
+
   100% {
     transform: scale(1);
     background-color: rgb(0, 190, 218, 0.75);
@@ -45,7 +46,7 @@
 }
 .Node-shortest {
   animation-name: shortestPath;
-  animation-duration: 1.2s;
+  animation-duration: 1.5s;
   animation-timing-function: ease-out;
   animation-delay: 0;
   animation-direction: alternate;

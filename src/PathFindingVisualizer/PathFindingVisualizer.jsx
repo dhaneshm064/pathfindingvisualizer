@@ -7,7 +7,7 @@ import './PathFindingVisualizer.css';
 import { dijkstra, getNodesInShortestPathOrder} from './Algorithms/Dijkstra';
 
 import { DFS } from './Algorithms/DFS.jsx';
-//import { Astar } from './Algorithms/Astar';
+import { Astar } from './Algorithms/Astar';
 
 const NUMBER_OF_ROWS = 20;
 const NUMBER_OF_COLS = 50;
@@ -231,7 +231,7 @@ export default class PathfindingVisualizer extends Component {
                     newGrid[node.row][node.col] = newNode;
                     this.setState({ grid: newGrid });
                 }
-            }, 70 * i);
+            }, 50 );
         }
     }
 
@@ -243,16 +243,19 @@ export default class PathfindingVisualizer extends Component {
         let { grid } = this.state;
         const finishNode = grid[FINISH_NODE_ROW] [FINISH_NODE_COL]; 
         const startNode = grid[START_NODE_ROW][START_NODE_COL];
-        var values
-        //var values = Astar (startNode, finishNode, grid, 20, 50);
-        let newGrid = values [0];
-        let visitedNodesInOrder = values [1]; 
+        var values = Astar(startNode, finishNode, grid, 20, 50);
+        let newGrid = values[0];
+        let visitedNodesInOrder = values[1]; 
         let nodesInShortestPathOrder = getNodesInShortestPathOrder(startNode, finishNode);
         this.animateVisitedAndShortestPath(visitedNodesInOrder, nodesInShortestPathOrder);
         ALGO = false;
         WALL = false;
         this.setState({ grid: newGrid });
     }
+    
+    
+    
+    
     animateShortestPath (nodesInShortestPathOrder, grid) {
 
         console.log ("shortestPath") 
@@ -271,10 +274,9 @@ export default class PathfindingVisualizer extends Component {
                 };
         
                 newGrid[node.row][node.col] = newNode;
-        
-                this.setState ({ grid: newGrid });
+                this.setState({ grid: newGrid});
 
-            }, 200 * i);
+            }, 50*i);
         }
     }
 
