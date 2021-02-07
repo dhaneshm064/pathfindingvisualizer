@@ -6,7 +6,7 @@ Created a path finding visualizer just because of pure fascination towards sever
 You can select the source, destination and a set of obstacles you want the path to avoid, 
 Choose the algorithm you wish to visualize the path from.
 
-#Algorithms Used
+# Algorithms Used
 
 Dijkstra's Algorithm: The most well known algorithm; this pathfinding algorithm guarantees the shortest path
 
